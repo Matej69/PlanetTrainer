@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: planet
+    uniqueID: 3119252149
+    locked: 0
+  - name: traveler
+    uniqueID: 3151418289
+    locked: 0
