@@ -30,7 +30,12 @@ public class SpaceTravelerBehaviour : MonoBehaviour {
         if (trevelState == e_travelState.TRAVELING)
         {
             if (IsInTravelTargetRadius())
+            {
                 trevelState = e_travelState.NOT_TRAVELING;
+                //if(GameMouse.GetRefrence().curSpriteId == GameMouse.MOUSE_IMG.WAITING)  
+                //this check will maybe be done since we can iteract with something else and mouse will change even if we are waiting for travel to be completed 
+                GameMouse.GetRefrence().SetMouseSprite(GameMouse.MOUSE_IMG.NORMAL);
+            }
             else if (IsInSlowDownRadius())
                 transform.Translate(Vector2.up * GetCurrentTravelSpeed() * Time.deltaTime * GetSLownDownFactor());
             else
@@ -47,7 +52,8 @@ public class SpaceTravelerBehaviour : MonoBehaviour {
             pointToTravelTo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RotateTowardsMouse();
             ResetMovementStartTime();
-            trevelState = e_travelState.TRAVELING;            
+            trevelState = e_travelState.TRAVELING;
+            GameMouse.GetRefrence().SetMouseSprite(GameMouse.MOUSE_IMG.WAITING);
         }
 		
 	}

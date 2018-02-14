@@ -294,6 +294,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GameCamera.cs" />
+    <Compile Include="Assets\GameMouse.cs" />
     <Compile Include="Assets\Scripts\MapGeneration.cs" />
     <Compile Include="Assets\Scripts\PlanetTypes.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />

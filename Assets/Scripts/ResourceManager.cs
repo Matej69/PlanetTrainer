@@ -20,4 +20,9 @@ public class ResourceManager : MonoBehaviour {
     {
         return Resources.Load<GameObject>("GameObjects/PlanetTravelScreen");
     }
+
+    static public Sprite GetSprite(string path)
+    {
+        return Resources.Load<Sprite>(path);
+    }
 }
