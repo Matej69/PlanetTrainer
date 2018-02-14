@@ -16,9 +16,19 @@ public class ResourceManager : MonoBehaviour {
 		
 	}
 
-    static public GameObject GetPlanetObject()
+    static public GameObject GetPlanetObject(PlanetTypes.e_type planetType)
     {
-        return Resources.Load<GameObject>("GameObjects/PlanetTravelScreen");
+        GameObject planet = Resources.Load<GameObject>("GameObjects/PlanetTravelScreen");
+        string basePath = "Graphics/planets";
+        switch (planetType)
+        {
+            case PlanetTypes.e_type.ANTI_MATER: planet.GetComponent<SpriteRenderer>().sprite = GetSprite(basePath +"/antimater") ; break;
+            case PlanetTypes.e_type.ICE: planet.GetComponent<SpriteRenderer>().sprite = GetSprite(basePath + "/ice"); break;
+            case PlanetTypes.e_type.MAGMA: planet.GetComponent<SpriteRenderer>().sprite = GetSprite(basePath + "/magma"); break;
+            case PlanetTypes.e_type.VEGETATION: planet.GetComponent<SpriteRenderer>().sprite = GetSprite(basePath + "/vegetation"); break;
+            case PlanetTypes.e_type.WATER: planet.GetComponent<SpriteRenderer>().sprite = GetSprite(basePath + "/water"); break;
+        }
+        return planet;
     }
 
     static public Sprite GetSprite(string path)

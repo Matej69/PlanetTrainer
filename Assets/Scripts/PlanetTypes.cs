@@ -45,7 +45,14 @@ public class PlanetTypes : MonoBehaviour {
         }
         return e_bonusEffect.NEUTRAL;
     }
-    
+
+
+
+    //Could be later switched with dinamic reading of collider x size
+    static public float GetPlanetRadius()
+    {
+        return 0.75f;
+    }
 
 
 }
