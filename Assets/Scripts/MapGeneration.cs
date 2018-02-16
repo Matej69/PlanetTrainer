@@ -20,7 +20,9 @@ public class MapGeneration : MonoBehaviour {
 
     // Use this for initialization
     void Start () {        
-        RadialPlanetSpawn(new Vector2(0,0), 150, 5, PlanetTypes.e_type.ANTI_MATER, "IcePlanetGroup");
+        RadialPlanetSpawn(new Vector2(0,0), 150, 5, PlanetTypes.e_type.ICE, "IcePlanetGroup");
+        RadialPlanetSpawn(new Vector2(0, 0), 150, 5, PlanetTypes.e_type.MAGMA, "MagmaPlanetGroup");
+        RadialPlanetSpawn(new Vector2(0, 0), 150, 5, PlanetTypes.e_type.VEGETATION, "VegetationPlanetGroup");
     }
 	
 	// Update is called once per frame
